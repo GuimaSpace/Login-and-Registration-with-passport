@@ -1,0 +1,26 @@
+<h1>Registro de usuário</h1>
+{{> _msg}}
+
+{{#if user}}
+
+{{#each usuario}}
+    Usuario: {{User_Name}}
+
+{{/each}}
+
+{{else}}
+<form action="/cad-user/" method="post">
+    <input type="text" name="name" id="name" placeholder="Seu Nome" ><br><br>
+    <input type="email" name="email" id="email" placeholder="Seu Email" ><br><br>
+    <input type="password" name="senha" id="senha" placeholder="Sua Senha" ><br><br>
+        <input type="password" name="senhaconfirm" id="senhaconfirm" placeholder="Confirme sua senha" ><br><br>
+    <input type="submit" value="Cadastrar usuário">
+</form>
+<hr>
+<h1>Faça login</h1>
+<form action="/login-user/" method="post">
+    <input type="text" name="email" id="email" placeholder="Seu Email"><br><br>
+    <input type="password" name="senha" id="senha" placeholder="Sua Senha"><br><br>
+    <input type="submit" value="Fazer Login AGORA!">
+</form>
+{{/if}}
